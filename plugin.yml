@@ -1,2 +1,8 @@
 name: mlib
-main: com.github.miskyle.mcpt.Main
+main: test.TestClass
+version: 0.0.6
+author: School_Uniform
+commands:
+  test:
+      description: CropPlus
+      usage: /<command>

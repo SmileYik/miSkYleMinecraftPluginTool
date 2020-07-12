@@ -1,6 +1,5 @@
 package com.github.miskyle.mcpt.redis;
 
-import redis.clients.jedis.Jedis;
 import redis.clients.jedis.JedisPool;
 import redis.clients.jedis.JedisPoolConfig;
 

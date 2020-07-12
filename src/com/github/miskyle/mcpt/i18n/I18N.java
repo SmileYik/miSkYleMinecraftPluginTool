@@ -5,7 +5,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 
-import org.bukkit.plugin.Plugin;
+import com.github.miskyle.mcpt.server.Logger;
 
 public class I18N {
 	private static I18N 		  i18n;
@@ -13,13 +13,13 @@ public class I18N {
 	private        ResourceBundle custum;
 	private final  ResourceBundle defual;
 	
-	public I18N(Plugin plugin,String language){
+	public I18N(String language){
 		defual = ResourceBundle.getBundle("lang/", Locale.CHINESE);
 		try{
 			custum = ResourceBundle.getBundle("lang/", new Locale(language));
 		}catch (Exception e) {
 			custum = null;
-			plugin.getLogger().log(Level.WARNING,
+			Logger.logger.log(Level.WARNING,
 					"»± ß”Ô—‘: "+language+"!  π”√ƒ¨»œ”Ô—‘: "+Locale.CHINESE);
 		}
 		i18n  = this;
