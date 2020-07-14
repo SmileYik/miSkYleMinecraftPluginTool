@@ -3,18 +3,18 @@ package com.github.miskyle.mcpt.nms.sleep;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.v1_12_R1.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_9_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
 import com.github.miskyle.mcpt.MCPT;
 
-import net.minecraft.server.v1_12_R1.BlockPosition;
-import net.minecraft.server.v1_12_R1.EntityPlayer;
-import net.minecraft.server.v1_12_R1.PacketPlayOutAnimation;
-import net.minecraft.server.v1_12_R1.PacketPlayOutBed;
+import net.minecraft.server.v1_9_R1.BlockPosition;
+import net.minecraft.server.v1_9_R1.EntityPlayer;
+import net.minecraft.server.v1_9_R1.PacketPlayOutAnimation;
+import net.minecraft.server.v1_9_R1.PacketPlayOutBed;
 
-public class NMSSleep_1_12R1 implements NMSSleep{
+public class NMSSleep_1_9R1 implements NMSSleep{
 	
 	public boolean sleep(Player player, Location l) {
 		player.setVelocity(new Vector());

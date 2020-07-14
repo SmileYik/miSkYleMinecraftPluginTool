@@ -5,16 +5,16 @@ import java.lang.reflect.Method;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.v1_15_R1.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_14_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
-import net.minecraft.server.v1_15_R1.Entity;
-import net.minecraft.server.v1_15_R1.EntityPlayer;
-import net.minecraft.server.v1_15_R1.EntityPose;
+import net.minecraft.server.v1_14_R1.Entity;
+import net.minecraft.server.v1_14_R1.EntityPlayer;
+import net.minecraft.server.v1_14_R1.EntityPose;
 
 
-public class NMSSleep_1_15R1 implements NMSSleep{
+public class NMSSleep_1_14R1 implements NMSSleep{
 
 	@Override
 	public boolean sleep(Player player, Location b) {

@@ -6,16 +6,24 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import com.github.miskyle.mcpt.nms.sleep.NMSSleep;
-import com.github.miskyle.mcpt.nms.sleep.NMSSleep_1_12R1;
-import com.github.miskyle.mcpt.nms.sleep.NMSSleep_1_15R1;
+import com.github.miskyle.mcpt.MCPT;
+import com.github.miskyle.mcpt.nms.sleep.*;
 
 public class TestClass extends JavaPlugin{
+	public static Plugin plug;
+	
 	@Override
 	public void onEnable() {
+		plug = this;
+		MCPT.plugin = this;
 		super.onEnable();
+		NMSSleep_1_15R1 sleep = new NMSSleep_1_15R1();
+		for(Player p : this.getServer().getOnlinePlayers()) {
+			sleep.leaveSleep(p);
+		}
 	}
 	@Override
 	public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
@@ -25,9 +33,8 @@ public class TestClass extends JavaPlugin{
 			case "SLEEP":{
 				NMSSleep_1_15R1 sleep = new NMSSleep_1_15R1();
 				Location l = ((Player)sender).getLocation();
-				l.getBlock().setType(Material.ORANGE_BED);
 				Bukkit.getScheduler().runTaskLater(this,()->{
-					sleep.sleep((Player)sender, l.getBlock());					
+					sleep.sleep((Player)sender, l);					
 				}, 10L);
 			}
 				
