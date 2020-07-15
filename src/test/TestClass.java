@@ -6,6 +6,7 @@ import org.bukkit.Material;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
+import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -23,6 +24,16 @@ public class TestClass extends JavaPlugin{
 		NMSSleep_1_15R1 sleep = new NMSSleep_1_15R1();
 		for(Player p : this.getServer().getOnlinePlayers()) {
 			sleep.leaveSleep(p);
+		}
+		
+		for(Material m : Material.values()) {
+			try {
+				if(m!=null)
+				System.out.println(m+" "+new ItemStack(m).getItemMeta().getLocalizedName());
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 	}
 	@Override
