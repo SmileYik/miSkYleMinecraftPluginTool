@@ -1,11 +1,11 @@
 package com.github.miskyle.mcpt.nms.nbtitem;
 
-import org.bukkit.craftbukkit.v1_7_R4.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_6_R3.inventory.CraftItemStack;
 
-import net.minecraft.server.v1_7_R4.ItemStack;
-import net.minecraft.server.v1_7_R4.NBTTagCompound;
+import net.minecraft.server.v1_6_R3.ItemStack;
+import net.minecraft.server.v1_6_R3.NBTTagCompound;
 
-public class NBTItem_1_7R4 implements NBTItem{
+public class NBTItem_1_6R3 implements NBTItem{
 	
 	private ItemStack getItemStack(org.bukkit.inventory.ItemStack is){
 		if(is==null)return null;

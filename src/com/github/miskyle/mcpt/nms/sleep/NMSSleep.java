@@ -34,6 +34,8 @@ public interface NMSSleep {
 			return new NMSSleep_1_8R1();
 		case "v1_7_R4":
 			return new NMSSleep_1_7R4();
+        case "v1_7_R1":
+          return new NMSSleep_1_7R1();
 		default:
 			return null;
 		}
