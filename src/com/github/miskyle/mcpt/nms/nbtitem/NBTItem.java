@@ -15,9 +15,16 @@ public interface NBTItem {
 	public byte[] 		getByteArray(ItemStack item, String key);
 	public Float 		getFloat(ItemStack item, String key);
 	public Long 		getLong(ItemStack item, String key);
+	public String getNBTTagCompound(ItemStack item);
 	
 	public static NBTItem getNBTItem(String bukkitVersion) {
 		switch (bukkitVersion) {
+        case "v1_16_R3":
+          return new NBTItem_1_16R3();
+        case "v1_16_R2":
+          return new NBTItem_1_16R2();
+        case "v1_16_R1":
+          return new NBTItem_1_16R1();
 		case "v1_15_R1":
 			return new NBTItem_1_15R1();
 		case "v1_14_R1":
@@ -49,7 +56,7 @@ public interface NBTItem {
 	     case "v1_5_R3":
            return new NBTItem_1_5R3();
 		default:
-			return null;
+			return new NBTItemNull();
 		}
 	};
 }

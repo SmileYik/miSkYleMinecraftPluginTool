@@ -140,4 +140,11 @@ public class NBTItem_1_9R1 implements NBTItem{
 		if(item == null)return false;
 		return item.getTag().hasKey(key);
 	}
+	
+    @Override
+    public String getNBTTagCompound(org.bukkit.inventory.ItemStack is) {
+      ItemStack item = getItemStack(is);
+      if(item == null) return "";
+      return item.save(new NBTTagCompound()).toString();
+    }
 }

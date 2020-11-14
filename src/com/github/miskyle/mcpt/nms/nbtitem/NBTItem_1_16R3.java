@@ -1,11 +1,11 @@
 package com.github.miskyle.mcpt.nms.nbtitem;
 
-import org.bukkit.craftbukkit.v1_11_R1.inventory.CraftItemStack;
+import org.bukkit.craftbukkit.v1_16_R3.inventory.CraftItemStack;
 
-import net.minecraft.server.v1_11_R1.ItemStack;
-import net.minecraft.server.v1_11_R1.NBTTagCompound;
+import net.minecraft.server.v1_16_R3.ItemStack;
+import net.minecraft.server.v1_16_R3.NBTTagCompound;
 
-public class NBTItem_1_11R1 implements NBTItem{
+public class NBTItem_1_16R3 implements NBTItem{
 	
 	private ItemStack getItemStack(org.bukkit.inventory.ItemStack is){
 		if(is==null)return null;
@@ -140,10 +140,11 @@ public class NBTItem_1_11R1 implements NBTItem{
 		if(item == null)return false;
 		return item.getTag().hasKey(key);
 	}
-	  @Override
-	  public String getNBTTagCompound(org.bukkit.inventory.ItemStack is) {
-	    ItemStack item = getItemStack(is);
-	    if(item == null) return "";
-	    return item.save(new NBTTagCompound()).toString();
-	  }
+	
+    @Override
+    public String getNBTTagCompound(org.bukkit.inventory.ItemStack is) {
+      ItemStack item = getItemStack(is);
+      if(item == null) return "";
+      return item.save(new NBTTagCompound()).asString();
+    }
 }
