@@ -6,6 +6,8 @@ public interface NMSActionBar {
 	public void sendActionBar(Player player,String msg);
 	public static NMSActionBar getActionBar(String bukkitVersion) {
 		switch (bukkitVersion) {
+		case "v1_17_R1":
+          return new ActionBar_1_17R1();
 		case "v1_16_R3":
           return new ActionBar_1_16R3();
 		case "v1_16_R2":

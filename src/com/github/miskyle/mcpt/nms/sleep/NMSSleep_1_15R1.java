@@ -16,6 +16,19 @@ import net.minecraft.server.v1_15_R1.EntityPose;
 
 public class NMSSleep_1_15R1 implements NMSSleep{
 
+  private static Method setPose;
+  
+  static {
+    try {
+      setPose = Entity.class.getMethod("setPose", EntityPose.class);
+      setPose.setAccessible(true);
+    } catch (NoSuchMethodException e) {
+      e.printStackTrace();
+    } catch (SecurityException e) {
+      e.printStackTrace();
+    }
+  }
+  
 	@Override
 	public boolean sleep(Player player, Location b) {
 		boolean flag = false;
@@ -29,10 +42,8 @@ public class NMSSleep_1_15R1 implements NMSSleep{
         player.teleport(b);
         player.setVelocity(new Vector());
         try {
-			Method m = Entity.class.getDeclaredMethod("setPose", EntityPose.class);
-			m.setAccessible(true);
-			m.invoke(p, EntityPose.SLEEPING);
-		} catch (NoSuchMethodException | SecurityException e) {
+			setPose.invoke(p, EntityPose.SLEEPING);
+		} catch (SecurityException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
 			e.printStackTrace();

@@ -19,6 +19,8 @@ public interface NBTItem {
 	
 	public static NBTItem getNBTItem(String bukkitVersion) {
 		switch (bukkitVersion) {
+		case "v1_17_R1":
+		  return new NBTItem_1_17R1();
         case "v1_16_R3":
           return new NBTItem_1_16R3();
         case "v1_16_R2":

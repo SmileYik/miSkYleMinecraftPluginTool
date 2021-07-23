@@ -17,5 +17,7 @@
 	<classpathentry kind="lib" path="F:/workspace/libs/servers/spigot-1.16.2.jar"/>
 	<classpathentry kind="lib" path="F:/workspace/libs/servers/spigot-1.16.3.jar"/>
 	<classpathentry kind="lib" path="F:/workspace/libs/servers/spigot-1.16.4.jar"/>
+	<classpathentry kind="lib" path="D:/Minecraft Dev/MinecraftServer/libs/servers/spigot-1.16.5.jar"/>
+	<classpathentry kind="lib" path="D:/Minecraft Dev/MinecraftServer/libs/servers/spigot-1.17.1 (1).jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

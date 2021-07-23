@@ -5,17 +5,17 @@ import java.lang.reflect.Method;
 
 import org.bukkit.Location;
 import org.bukkit.Material;
-import org.bukkit.craftbukkit.v1_16_R1.entity.CraftPlayer;
+import org.bukkit.craftbukkit.v1_17_R1.entity.CraftPlayer;
 import org.bukkit.entity.Player;
 import org.bukkit.util.Vector;
 
-import net.minecraft.server.v1_16_R1.Entity;
-import net.minecraft.server.v1_16_R1.EntityPlayer;
-import net.minecraft.server.v1_16_R1.EntityPose;
+import net.minecraft.world.entity.Entity;
+import net.minecraft.server.level.EntityPlayer;
+import net.minecraft.world.entity.EntityPose;
 
 
-public class NMSSleep_1_16R1 implements NMSSleep{
-
+public class NMSSleep_1_17R1 implements NMSSleep{
+  
   private static Method setPose;
   
   static {
@@ -28,7 +28,7 @@ public class NMSSleep_1_16R1 implements NMSSleep{
       e.printStackTrace();
     }
   }
-  
+ 
 	@Override
 	public boolean sleep(Player player, Location b) {
 		boolean flag = false;
@@ -42,7 +42,7 @@ public class NMSSleep_1_16R1 implements NMSSleep{
         player.teleport(b);
         player.setVelocity(new Vector());
         try {
-			setPose.invoke(p, EntityPose.SLEEPING);
+			setPose.invoke(p, EntityPose.c);
 		} catch (SecurityException e) {
 			e.printStackTrace();
 		} catch (IllegalAccessException e) {
@@ -63,7 +63,7 @@ public class NMSSleep_1_16R1 implements NMSSleep{
 	
 	@Override
 	public boolean isSleep(Player p) {
-		return ((CraftPlayer)p).getHandle().getPose() == EntityPose.SLEEPING;
+		return ((CraftPlayer)p).getHandle().getPose() == EntityPose.c;
 	}
 
 }

@@ -12,6 +12,8 @@ public interface NMSSleep {
 	
 	public static NMSSleep getNMSSleep(String bukkitVersion) {
 		switch (bukkitVersion) {
+		case "v1_17_R1":
+          return new NMSSleep_1_17R1();
 		case "v1_16_R3":
           return new NMSSleep_1_16R3();
 		case "v1_16_R2":

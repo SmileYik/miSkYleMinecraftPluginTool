@@ -37,7 +37,7 @@ public interface NMSTitle {
 		case "v1_8_R1":
 			return new Title_1_8R1();
 		default:
-			return null;
+			return new Title_1_17R1();
 		}
 	};
 }
